@@ -24,7 +24,7 @@ Este projeto foi seguindo um tutorial onde tive contato com essas tecnologias, o
 - Método `GET`
 - Rota: `/books/:bookId`
 - Descrição: Retorna um único livro com base no ID
--
+
 
 ##### Adicionar um livro
 
