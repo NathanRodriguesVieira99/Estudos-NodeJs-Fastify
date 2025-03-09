@@ -1,6 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
-import { prisma } from "../lib/prisma.ts";
+import { prisma } from "../../lib/prisma.ts";
 
 // cria a rota que atualiza os dados pelo método PATCH
 export async function updateBook(app: FastifyInstance) {

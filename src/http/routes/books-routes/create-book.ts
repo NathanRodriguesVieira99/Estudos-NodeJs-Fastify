@@ -1,6 +1,6 @@
 import { FastifyInstance } from "fastify";
 import { z } from "zod";
-import { prisma } from "../lib/prisma.ts";
+import { prisma } from "../../lib/prisma.ts";
 
 // criação da rota  que adiciona os dados com o método POST
 export async function createBook(app: FastifyInstance) {

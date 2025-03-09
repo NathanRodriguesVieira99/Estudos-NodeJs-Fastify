@@ -1,5 +1,5 @@
 import type { FastifyInstance } from "fastify";
-import { prisma } from "../lib/prisma.ts";
+import { prisma } from "../../lib/prisma.ts";
 import { z } from "zod";
 
 // criação da rota  que lista todos os dados com o método GET

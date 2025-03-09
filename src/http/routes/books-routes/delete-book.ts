@@ -1,6 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
-import { prisma } from "../lib/prisma.ts";
+import { prisma } from "../../lib/prisma.ts";
 
 // criação da rota que apaga dados com o método DELETE
 export async function deleteBook(app: FastifyInstance) {
