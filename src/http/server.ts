@@ -1,16 +1,14 @@
 import fastify from "fastify";
-import { createBook } from "./routes/create-book.ts";
-import { getBook } from "./routes/get-book.ts";
-import { updateBook } from "./routes/upddate-book.ts";
-import { deleteBook } from "./routes/delete-book.ts";
+import { fastifyCors } from "@fastify/cors";
+import { Routes } from "./routes/index.ts";
 
 const app = fastify();
 
-// registra as rotas
-app.register(createBook);
-app.register(getBook);
-app.register(updateBook);
-app.register(deleteBook);
+// deixa acessível para front-ends
+app.register(fastifyCors, { origin: "*" });
+
+// importa as rotas
+app.register(Routes);
 
 // faz o servidor rodar
 app.listen({ port: 3333 }).then(() => {
