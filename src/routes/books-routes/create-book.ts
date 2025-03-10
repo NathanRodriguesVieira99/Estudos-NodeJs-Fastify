@@ -24,6 +24,7 @@ export async function createBook(app: FastifyInstance) {
     });
 
     return reply.status(201).send({
+      id: book.id,
       title: title,
       author: author,
       description: description,
