@@ -51,13 +51,10 @@ describe("Create Book to test  delete", () => {
     const deleteBook = await request(app.server).delete(`/books/${bookId}`);
 
     // verifica se a resposta do DELETE é 204
-    console.log(`Status: ${deleteBook.status}`);
     expect(deleteBook.status).toBe(204);
 
     // verifica se o livro realmente foi deletado e gera 404
     const getResponse = await request(app.server).get(`/books/${bookId}`);
-
-    console.log(`Status: ${getResponse.status}`);
     expect(getResponse.status).toBe(404);
   });
 });
