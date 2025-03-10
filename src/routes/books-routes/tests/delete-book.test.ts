@@ -15,6 +15,7 @@ describe("Create Book to test  delete", () => {
     });
 
     // verifica se foi criado na API
+    console.log(`Status: ${response.status}`);
     expect(response.status).toBe(201);
 
     // pega o ID do livro criado
@@ -37,12 +38,14 @@ describe("Create Book to test  delete", () => {
     });
 
     // verifica se a resposta do DELETE é 204
+    console.log(`Status: ${deleteBook.status}`);
     expect(deleteBook.status).toBe(204);
 
-    // verifica se o livro realmente foi deletado
+    // verifica se o livro realmente foi deletado e gera 404
 
     const getResponse = await fetch(`http://localhost:3333/books/${bookId}`);
 
+    console.log(`Status: ${getResponse.status}`);
     expect(getResponse.status).toBe(404);
   });
 });
