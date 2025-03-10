@@ -12,7 +12,7 @@ export async function deleteBook(app: FastifyInstance) {
     const { bookId } = getBooksParam.parse(request.params);
 
     // busca pelo ID
-    const book = prisma.book.findUnique({
+    const book = await prisma.book.findUnique({
       where: {
         id: bookId,
       },
@@ -28,6 +28,6 @@ export async function deleteBook(app: FastifyInstance) {
         id: bookId,
       },
     });
-    reply.code(204).send;
+    reply.code(204).send();
   });
 }
