@@ -23,6 +23,11 @@ export async function getBook(app: FastifyInstance) {
         id: bookId,
       },
     });
+
+    if (!book) {
+      return reply.code(404).send("Book not found");
+    }
+    
     return reply.status(200).send(book);
   });
 }
