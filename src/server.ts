@@ -4,7 +4,6 @@ import { fastifySwagger } from "@fastify/swagger";
 import { fastifySwaggerUi } from "@fastify/swagger-ui";
 import { Routes } from "./routes/index.ts";
 
-
 const app = fastify();
 
 // faz o servidor rodar
@@ -17,7 +16,6 @@ app.register(fastifyCors, { origin: "*" });
 
 // importa as rotas
 app.register(Routes);
-
 
 // doc com Swagger
 app.register(fastifySwagger, {
@@ -32,3 +30,5 @@ app.register(fastifySwagger, {
 app.register(fastifySwaggerUi, {
   routePrefix: "/docs",
 });
+
+export default app;
