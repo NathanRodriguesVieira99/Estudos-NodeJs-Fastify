@@ -1,18 +1,23 @@
-describe("Create Book", () => {
-  it("POST to /books should return 201", async () => {
-    const body = {
-      title: "O Senhor dos Anéis: O Retorno do Rei",
-      author: "J.R.R Tolkien",
-      description: "O terceiro livro da saga",
-    };
-    const response = await fetch("http://localhost:3333/books", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
+import request from "supertest";
+import app from "../../../server.ts";
 
+describe("Create Book", () => {
+  beforeAll(async () => {
+    await app.ready();
+  });
+
+  afterAll(async () => {
+    await app.close();
+  });
+
+  it("POST to /books should return 201", async () => {
+    const response = await request(app.server).post(`/books`).send({
+      title: "Livro Teste",
+      author: "Autor teste",
+      description: "Descrição Teste",
+    });
+    
+    console.log(`Status: ${response.status}`);
     expect(response.status).toBe(201);
   });
 });
