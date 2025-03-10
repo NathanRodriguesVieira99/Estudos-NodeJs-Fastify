@@ -13,11 +13,16 @@ describe("Create Book", () => {
   it("POST to /books should return 201", async () => {
     const response = await request(app.server).post(`/books`).send({
       title: "Livro Teste",
-      author: "Autor teste",
+      author: "Autor Teste",
       description: "Descrição Teste",
     });
-    
+
     console.log(`Status: ${response.status}`);
+    console.log(response.body);
+
     expect(response.status).toBe(201);
+    expect(response.body.title).toBe("Livro Teste");
+    expect(response.body.author).toBe("Autor Teste");
+    expect(response.body.description).toBe("Descrição Teste");
   });
 });
