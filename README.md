@@ -51,3 +51,38 @@ Este projeto foi seguindo um tutorial onde tive contato com essas tecnologias, o
   - `IsReading`(boolean): indica se o livro está sendo lido.
   - `IsFavorite`(boolean): indica se o livro é favorito
   - `IsFinished`(boolean): indica se o livro foi concluído
+
+
+### Estrutura do projeto
+
+Estudos NodeJs Fastify/
+├─ prisma/
+│  ├─ migrations/
+│  │  ├─ 20250309211059_create_book_table/
+│  │  │  └─ migration.sql
+│  │  └─ migration_lock.toml
+│  └─ schema.prisma
+├─ src/
+│  ├─ lib/
+│  │  └─ prisma.ts
+│  ├─ routes/
+│  │  ├─ books-routes/
+│  │  │  ├─ tests/
+│  │  │  │  ├─ create-book.test.ts
+│  │  │  │  └─ delete-book.test.ts
+│  │  │  ├─ create-book.ts
+│  │  │  ├─ delete-book.ts
+│  │  │  ├─ get-book.ts
+│  │  │  └─ update-book.ts
+│  │  └─ index.ts
+│  ├─ types/
+│  ├─ server.test.ts
+│  └─ server.ts
+├─ .env
+├─ .env.example
+├─ .gitignore
+├─ jest.config.ts
+├─ package-lock.json
+├─ package.json
+├─ README.md
+└─ tsconfig.json
