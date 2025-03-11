@@ -18,13 +18,11 @@ Este projeto foi seguindo um tutorial onde tive contato com essas tecnologias, o
 - Rota: `/books`
 - Descrição: Retorna uma lista com todos os livros cadastrados
 
-
 ##### Listar um livro
 
 - Método `GET`
 - Rota: `/books/:bookId`
 - Descrição: Retorna um único livro com base no ID
-
 
 ##### Adicionar um livro
 
@@ -52,8 +50,9 @@ Este projeto foi seguindo um tutorial onde tive contato com essas tecnologias, o
   - `IsFavorite`(boolean): indica se o livro é favorito
   - `IsFinished`(boolean): indica se o livro foi concluído
 
-
 ### Estrutura do projeto
+
+```bash
 
 Estudos NodeJs Fastify/
 ├─ prisma/
@@ -86,3 +85,4 @@ Estudos NodeJs Fastify/
 ├─ package.json
 ├─ README.md
 └─ tsconfig.json
+```
